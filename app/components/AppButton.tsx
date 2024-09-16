@@ -1,9 +1,14 @@
 import React from "react";
-import { StyleSheet, Text, TouchableOpacity } from "react-native";
-
+import { StyleSheet, Text, TouchableOpacity, GestureResponderEvent } from "react-native";
 import colors from "../config/colors";
 
-function AppButton({ title, onPress, color = "primary" }) {
+interface AppButtonProps {
+  title: string;
+  onPress: (event: GestureResponderEvent) => void; // onPress는 필수이며 함수 타입
+  color?: keyof typeof colors; // color는 선택적이며 colors 객체의 키 중 하나
+}
+
+const AppButton: React.FC<AppButtonProps> = ({ title, onPress, color = "primary" }) => {
   return (
     <TouchableOpacity
       style={[styles.button, { backgroundColor: colors[color] }]}
@@ -12,7 +17,7 @@ function AppButton({ title, onPress, color = "primary" }) {
       <Text style={styles.text}>{title}</Text>
     </TouchableOpacity>
   );
-}
+};
 
 const styles = StyleSheet.create({
   button: {
