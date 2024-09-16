@@ -1,11 +1,13 @@
 import React from "react";
 import { View, Image, StyleSheet } from "react-native";
 import AppText from "../components/AppText";
-
 import ListItem from "../components/ListItem";
 import colors from "../config/colors";
 
-function ListingDetailsScreen(props) {
+// props 타입을 정의할 필요가 없으면 빈 객체로 처리할 수 있습니다.
+interface ListingDetailsScreenProps {}
+
+const ListingDetailsScreen: React.FC<ListingDetailsScreenProps> = (props) => {
   return (
     <View>
       <Image style={styles.image} source={require("../assets/jacket.jpg")} />
@@ -22,7 +24,7 @@ function ListingDetailsScreen(props) {
       </View>
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   detailsContainer: {
