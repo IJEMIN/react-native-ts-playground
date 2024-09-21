@@ -28,7 +28,7 @@ const menuItems = [
 const AccountScreen: React.FC<AccountScreenProps> = ({}) => {
   return (
     <Screen style={styles.screen}>
-        <View style={styles.container}>
+        <View style={[styles.container, {height : 100}]}>
             <ListItem
                 title="Mosh Hamedani"
                 subTitle="Hello"
