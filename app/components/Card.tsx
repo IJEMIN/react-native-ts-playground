@@ -4,7 +4,14 @@ import { View, StyleSheet, Image } from "react-native";
 import AppText from "./AppText";
 import colors from "../config/colors";
 
-function Card({ title, subTitle, image }) {
+interface CardProps {
+  title: string;
+  subTitle: string;
+  image: any; 
+}
+
+
+const Card: React.FC<CardProps> = ({ title, subTitle, image }) => { 
   return (
     <View style={styles.card}>
       <Image style={styles.image} source={image} />
@@ -15,6 +22,7 @@ function Card({ title, subTitle, image }) {
     </View>
   );
 }
+
 
 const styles = StyleSheet.create({
   card: {
