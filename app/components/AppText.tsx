@@ -1,7 +1,13 @@
 import React from "react";
 import { Text, StyleSheet, Platform } from "react-native";
 
-function AppText({ children, style }) {
+
+interface AppTextProps {
+  children: React.ReactNode;
+  style?: object;
+}
+
+const AppText : React.FC<AppTextProps> = ({ children, style }) => {
   return <Text style={[styles.text, style]}>{children}</Text>;
 }
 
