@@ -13,7 +13,7 @@ const Icon: React.FC<IconProps> = ({
   name,
   size = 40,
   backgroundColor = "#000",
-  iconColor = "fff",
+  iconColor = "#fff",
 }) => {
   return (
     <View
