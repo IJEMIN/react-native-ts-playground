@@ -23,6 +23,7 @@ const initialiMessages = [
 const MessageScreen: React.FC = () => {
 
   const [messages, setMessages] = useState(initialiMessages);
+  const [refreshing, setRefreshing] = useState(false);
 
   const handleDelete = (message: any) => {
     // Delete the message from messages
@@ -47,6 +48,17 @@ const MessageScreen: React.FC = () => {
           />
         )}
         ItemSeparatorComponent={ListItemSeperator}
+        refreshing={refreshing}
+        onRefresh={() => {
+          setMessages([
+            {
+              id: 3,
+              title: "T3",
+              description: "D3",
+              image: require("../assets/mosh.jpg"),
+            },
+          ]);
+        }}
       />
     </Screen>
   );
